@@ -11,16 +11,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
+
       - name: Copy to VPS
         uses: appleboy/scp-action@v0.1.5
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_KEY }}
-          source: |
-            docker-compose.yml
-            Caddyfile
+          source: "./*"
           target: "/root/apps/"
 
       - name: Restart container
