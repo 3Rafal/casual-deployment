@@ -4,22 +4,26 @@ on:
   push:
     branches:
       - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-- name: Copy to VPS
-  uses: appleboy/scp-action@v0.1.5
-  with:
-    host: ${{ secrets.VPS_HOST }}
-    username: ${{ secrets.VPS_USER }}
-    key: ${{ secrets.VPS_KEY }}
-    source: "./*"
-    target: "/root/apps/my-app/"
+    steps:
+      - name: Copy to VPS
+        uses: appleboy/scp-action@v0.1.5
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_KEY }}
+          source: "./*"
+          target: "/root/apps/my-app/"
 
-- name: Restart container
-  uses: appleboy/ssh-action@v0.1.6
-  with:
-    host: ${{ secrets.VPS_HOST }}
-    username: ${{ secrets.VPS_USER }}
-    key: ${{ secrets.VPS_KEY }}
-    script: |
-      cd /root/apps
-      docker compose up -d babys-first-web-app
+      - name: Restart container
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_KEY }}
+          script: |
+            cd /root/apps
+            docker compose up -d babys-first-web-app
