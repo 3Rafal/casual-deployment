@@ -15,7 +15,9 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_KEY }}
-          source: "./*"
+          source: |
+            docker-compose.yml
+            Caddyfile
           target: "/root/apps/"
 
       - name: Restart container
