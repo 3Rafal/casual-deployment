@@ -2,7 +2,6 @@ version: "3.9"
 
 services:
   babys-first-web-app:
-    image: babys-first-web-app:latest
     env_file:
       - ./babys-first-web-app/babys-first-web-app.env
     expose:
