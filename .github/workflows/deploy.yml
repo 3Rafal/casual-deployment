@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
       - name: Copy to VPS
         uses: appleboy/scp-action@v0.1.5
         with:
