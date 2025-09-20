@@ -1,0 +1,3 @@
+babys-first-web-app.3rafal.com {
+    reverse_proxy babys-first-web-app:5000
+}
