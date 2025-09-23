@@ -27,8 +27,6 @@ services:
       context: ./fullstack-fun
       dockerfile: Dockerfile
     container_name: fullstack-fun
-    env_file:
-      - ./fullstack-fun/.env
     ports:
       - "5001:5000"
     restart: unless-stopped
