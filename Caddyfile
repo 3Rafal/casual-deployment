@@ -4,6 +4,6 @@ babys-first-web-app.3rafal.com {
 }
 
 fullstack-fun.3rafal.com {
-    reverse_proxy fullstack-fun:5001
+    reverse_proxy fullstack-fun:5000
     encode gzip
 }
