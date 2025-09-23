@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   babys-first-web-app:
     build:
@@ -22,6 +20,17 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
+    restart: unless-stopped
+
+  fullstack-fun:
+    build:
+      context: ./fullstack-fun
+      dockerfile: Dockerfile
+    container_name: fullstack-fun
+    env_file:
+      - ./fullstack-fun/.env
+    ports:
+      - "5001:5000"
     restart: unless-stopped
 
 volumes:

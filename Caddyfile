@@ -2,3 +2,8 @@ babys-first-web-app.3rafal.com {
     reverse_proxy babys-first-web-app:5000
     encode gzip
 }
+
+fullstack-fun.3rafal.com {
+    reverse_proxy fullstack-fun:5001
+    encode gzip
+}
