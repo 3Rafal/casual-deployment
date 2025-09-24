@@ -31,6 +31,15 @@ services:
       - "5001:5000"
     restart: unless-stopped
 
+  numbers:
+    build:
+      context: ./numbers
+      dockerfile: Dockerfile
+    container_name: numbers
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
 volumes:
   caddy_data:
   caddy_config:

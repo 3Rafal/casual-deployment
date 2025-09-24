@@ -7,3 +7,8 @@ fullstack-fun.3rafal.com {
     reverse_proxy fullstack-fun:5000
     encode gzip
 }
+
+numbers.3rafal.com {
+    reverse_proxy numbers:8000
+    encode gzip
+}
