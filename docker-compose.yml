@@ -40,6 +40,15 @@ services:
       - "8000:8000"
     restart: unless-stopped
 
+  pirate:  
+    build:
+      context: ./pirate
+      dockerfile: Dockerfile
+    container_name: pirate
+    ports:
+      - "8001:8000"
+    restart: unless-stopped
+
 volumes:
   caddy_data:
   caddy_config:
