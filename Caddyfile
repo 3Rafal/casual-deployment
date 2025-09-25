@@ -1,11 +1,15 @@
 babys-first-web-app.3rafal.com {
     reverse_proxy babys-first-web-app:5000
     encode gzip
+    header_up X-Forwarded-Proto {scheme}
+    header_up X-Forwarded-For {remote_host}
 }
 
 fullstack-fun.3rafal.com {
     reverse_proxy fullstack-fun:5000
     encode gzip
+    header_up X-Forwarded-Proto {scheme}
+    header_up X-Forwarded-For {remote_host}
 }
 
 numbers.3rafal.com {
