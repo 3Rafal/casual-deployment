@@ -12,3 +12,8 @@ numbers.3rafal.com {
     reverse_proxy numbers:8000
     encode gzip
 }
+
+pirate.3rafal.com {
+    reverse_proxy pirate:8000
+    encode gzip
+}
